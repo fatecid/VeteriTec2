@@ -1,0 +1,70 @@
+body{
+  background: rgba(0, 0, 0, 0.09);
+}
+
+.cabecalho{
+    width: 900px;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.9);
+    text-align: center;
+  }
+
+.cabecalho h1{
+    color: green;
+    padding: 1px;
+    margin: 5px auto 5px auto;
+}
+
+.cabecalho h2{
+    color: #000000;
+    font-size: 8pt;
+    position: absolute;
+    left: 5;
+}
+
+.menu {
+    display: block;
+}
+
+.menu ul {
+    list-style: none;
+    text-transform: uppercase;
+    /*position: absolute;*/
+    top: -20px;
+    left: 500px;
+}
+
+.menu li:hover {
+    background-color: #606060;
+}
+
+.menu li {
+    display: inline-block;
+    background-color: #dddddd;
+    padding: 10px;
+    margin: 2px;
+    transition: background-color 1s;
+}
+
+.menu h1 {
+    display: none;
+}
+
+.menu a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+/*CABEÇALHO*/
+/*INTERFACE*/
+.interface {
+    background-color: #ffffff;
+    width: 900px;
+    margin: -10px auto 5px auto;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    padding-bottom: 5px
+}
