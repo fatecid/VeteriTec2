@@ -2,13 +2,14 @@ from django.urls import path
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
     path('', views.index, name='index'),
     path('index', views.index, name='index'),
     path('home', views.home, name='home'),
-    path('login', views.login, name='login'),
+     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('agenda', views.agenda, name='agenda'),
     path('calculadora', views.calculadora, name='calculadora'),
     path('clientes', views.clientes, name='clientes'),
