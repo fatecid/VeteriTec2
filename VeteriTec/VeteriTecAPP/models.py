@@ -8,6 +8,7 @@
 from django.db import models
 
 
+
 class Agenda(models.Model):
     idvet = models.IntegerField()
     cliente = models.CharField(max_length=30, blank=True, null=True)
@@ -202,6 +203,11 @@ class Fornecedor(models.Model):
     class Meta:
         managed = False
         db_table = 'fornecedor'
+
+    def __str__(self):
+        return self.nome + " " + self.cnpj
+
+
 
 
 class Funcionario(models.Model):

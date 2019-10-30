@@ -9,5 +9,9 @@ Fornecedores
 {% endblock %}
 
 {% block main %}
-aqui vai ter o cadastro dos fornecedores
+<form action="{% url 'fornecedor' %}" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit" class="btn btn-secondary">Salvar</button>
+</form>
 {% endblock %}

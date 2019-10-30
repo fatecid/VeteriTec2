@@ -1,5 +1,8 @@
-from django.shortcuts import render
+
+from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
+from .forms import FornecedorForm
 
 
 def index(request):
@@ -21,7 +24,12 @@ def clientes(request):
     return render(request, 'clientes.html')
 
 def fornecedor(request):
-    return render(request, 'fornecedor.html')
+    form = FornecedorForm(request.POST, None)
+    if form.is_valid():
+        form.save()
+        # return redirect('home')
+    return render(request, 'fornecedor.html', {'form': form})
+
 
 def funcionarios(request):
     return render(request, 'funcionarios.html')
