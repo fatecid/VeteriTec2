@@ -8,7 +8,11 @@ Clientes
 Cadastro de Clientes
 {% endblock %}
 {% block main %}
-
-<!-- www.123formbuilder.com script begins here --><iframe allowTransparency="true" style="min-height:700px; height:inherit; overflow:auto;" width="500%" id="contactform123" name="contactform123" marginwidth="0" marginheight="0" frameborder="0" src="//www.123formbuilder.com/my-contact-form-5035544.html"><p>Your browser does not support iframes. The contact form cannot be displayed. Please use another contact method (phone, fax etc)</p></iframe><!-- www.123formbuilder.com script ends here -->
-
+<form action="{% url 'clientes' %}" method="POST">
+       {% csrf_token %}
+       {{ form }}
+<!--<iframe allowTransparency="true" style="min-height:700px; height:inherit; overflow:auto;" width="500%" id="contactform123" name="contactform123" marginwidth="0" marginheight="0" frameborder="0" src="//www.123formbuilder.com/my-contact-form-5035544.html"><p>Your browser does not support iframes. The contact form cannot be displayed. Please use another contact method (phone, fax etc)</p></iframe>-->
+    <button type="submit" class="btn btn-secondary">Salvar</button>
+    <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar">
+</form>
 {% endblock %}
