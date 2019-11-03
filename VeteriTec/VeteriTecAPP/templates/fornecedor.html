@@ -9,7 +9,7 @@ Fornecedores
 {% endblock %}
 
 {% block main %}
-<form action="{% url 'fornecedor' %}" method="POST">
+<form method="POST">
     {% csrf_token %}
     {{ form }}
     <button type="submit" class="btn btn-secondary">Salvar</button>

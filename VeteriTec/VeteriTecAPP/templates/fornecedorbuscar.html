@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Seja Bem Vindo!
+{% endblock %}
+
+{% block pagina %}
+Busca de Fornecedor
+{% endblock %}
+
+{% block main %}
+    <ul>
+    {% for fornecedor in forc %}
+        <li><a href="{% url 'fornecedor_update' fornecedor.id %}">{{ fornecedor.nome }} </a></li>
+        <li><a href="{% url 'fornecedor_delete' fornecedor.id %}"> Deletar</a></li>
+
+    {% endfor %}
+    </ul>
+
+{% endblock %}
