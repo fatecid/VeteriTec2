@@ -11,9 +11,10 @@ Busca de Fornecedor
 {% block main %}
     <ul>
     {% for fornecedor in forc %}
-        <li><a href="{% url 'fornecedor_update' fornecedor.id %}">{{ fornecedor.nome }} </a></li>
-        <li><a href="{% url 'fornecedor_delete' fornecedor.id %}"> Deletar</a></li>
-
+        <li>
+            <a href="{% url 'fornecedor_update' fornecedor.id %}">{{ fornecedor.nome }} </a>
+            <a href="{% url 'fornecedor_delete' fornecedor.id %}">  - Deletar</a></li>
+        </li>
     {% endfor %}
     </ul>
 

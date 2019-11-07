@@ -74,6 +74,32 @@ def funcionarios(request):
     return render(request, 'funcionarios.html', {'form': form})
 
 
+def funcionariosbuscar(request):
+    func = Funcionario.objects.all()
+    return render(request, 'funcionariosbuscar.html', {'func': func})
+
+
+def funcionario_update(request, id):
+        func = get_object_or_404(Funcionario, pk=id)
+        form = FuncionarioForm(request.POST or None, instance=func)
+
+        if form.is_valid():
+            form.save()
+            return redirect('funcionariosbuscar')
+
+        return render(request, 'funcionarios.html', {'form': form})
+
+
+def funcionario_delete(request, id):
+    func = get_object_or_404(Funcionario, pk=id)
+
+    if request.method == 'POST':
+        func.delete()
+        return redirect('funcionariosbuscar')
+
+    return render(request, 'confirmacao.html', {'func': func})
+
+
 def relatorio(request):
     return render(request, 'relatorio.html')
 

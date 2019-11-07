@@ -81,10 +81,10 @@ DATABASES = {
     #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     # }
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'bichodamata',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
+        'NAME': 'veteritec',
+        'USER': 'piVeteriTec',
+        'PASSWORD': 'PICVeteriTec',
+        'HOST': 'veteritec2.cwvkxrnjrydq.sa-east-1.rds.amazonaws.com',
         'PORT': '3306',
     }
 }
