@@ -18,3 +18,8 @@ class ClientesForm(ModelForm):
         model = Cliente
         fields = ['data','nome','cpf','sexo','nascimento','cep','rua','numero','bairro','cidade','uf','complemento','telefone','celular','email']
 
+class AnimalForm(ModelForm):
+    class Meta:
+        model = Animal
+        fields = ['nome','especie','raca','sexo','nascimento','castrado','cor','data','obs']
+

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Seja Bem Vindo!
+{% endblock %}
+
+{% block pagina %}
+Busca de Clientes
+{% endblock %}
+
+{% block main %}
+    <ul>
+    {% for cliente in clie %}
+        <li>
+            <a href="{% url 'clientes_update' cliente.id %}">{{ cliente.nome }} </a>
+            <a href="{% url 'clientes_delete' cliente.id %}">  - Deletar</a></li>
+        </li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}

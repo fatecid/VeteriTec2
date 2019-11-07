@@ -33,6 +33,37 @@ def clientes(request):
     return render(request, 'clientes.html', {'form': form})
 
 
+def clientesbuscar(request):
+    clie = Cliente.objects.all()
+    return render(request, 'clientesbuscar.html', {'clie': clie})
+
+
+def clientes_update(request, id):
+    clie = get_object_or_404(Cliente, pk=id)
+    form = ClientesForm(request.POST or None, instance=clie)
+    formA = AnimalForm(request.POST or None, instance=clie)
+
+    if form.is_valid():
+        form.save()
+        return redirect('clientesbuscar')
+    
+    if formA.is_valid():
+        formA.save()
+        return redirect('clientesbuscar')
+
+    return render(request, 'clientes.html', {'form': form ,'formA': formA})
+
+
+def clientes_delete(request, id):
+    clie = get_object_or_404(Cliente, pk=id)
+
+    if request.method == 'POST':
+        clie.delete()
+        return redirect('clientesbuscar')
+
+    return render(request, 'confirm_delete_clie.html', {'clie': clie})
+
+
 def fornecedor(request):
     form = FornecedorForm(request.POST or None)
     if form.is_valid():
@@ -63,7 +94,7 @@ def fornecedor_delete(request, id):
         forc.delete()
         return redirect('fornecedorbuscar')
 
-    return render(request, 'confirm_delete.html', {'forc': forc})
+    return render(request, 'confirm_delete_forc.html', {'forc': forc})
 
 
 def funcionarios(request):
@@ -97,7 +128,7 @@ def funcionario_delete(request, id):
         func.delete()
         return redirect('funcionariosbuscar')
 
-    return render(request, 'confirmacao.html', {'func': func})
+    return render(request, 'confirm_delete_func.html', {'func': func})
 
 
 def relatorio(request):

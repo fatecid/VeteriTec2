@@ -23,7 +23,8 @@
       <div class="list-group list-group-flush">
         <a href="/agenda" class="list-group-item list-group-item-action bg-light">Agenda</a>
         <a href="/calculadora" class="list-group-item list-group-item-action bg-light">Calculadora</a>
-        <a href="/clientes" class="list-group-item list-group-item-action bg-light">Clientes</a>
+        <a href="{% url 'clientes' %}" class="list-group-item list-group-item-action bg-light">Clientes</a>
+        <a href="{% url 'clientesbuscar' %}" class="list-group-item list-group-item-action bg-light">BuscaClientes</a>
           <a href="{% url 'funcionarios' %}" class="list-group-item list-group-item-action bg-light">Funcionários</a>
           <a href="{% url 'funcionariosbuscar' %}" class="list-group-item list-group-item-action bg-light">BuscaFuncionarios</a>
         <a href="{% url 'fornecedor' %}" class="list-group-item list-group-item-action bg-light">Fornecedores</a>

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Deletar Cliente
+{% endblock %}
+
+{% block pagina %}
+Deletar Cliente
+{% endblock %}
+
+{% block main %}
+<h>Tem certeza que deseja deletar {{ clie.nome }} ? </h>
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-secondary">Deletar</button>
+    <a href="/clientesbuscar" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}

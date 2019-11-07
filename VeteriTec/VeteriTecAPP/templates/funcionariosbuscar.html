@@ -9,13 +9,11 @@ Busca de Funcionários
 {% endblock %}
 
 {% block main %}
-<!--<form action="{% url 'funcionarios' %}" method="POST">-->
     <ul>
     {% for funcionario in func %}
         <li>
             <a href="{% url 'funcionario_update' funcionario.id %}">{{ funcionario.nome }} </a>
             <a href="{% url 'funcionario_delete' funcionario.id %}">  - Deletar</a></li>
-<!--            <a href="{% url 'funcionariosbuscar'  %}">{{ funcionario.nome }} </a>-->
         </li>
     {% endfor %}
     </ul>
