@@ -9,9 +9,47 @@ Fornecedores
 {% endblock %}
 
 {% block main %}
-<form method="POST">
+<form method="POST" id="form-fornecedor">
     {% csrf_token %}
-    {{ form }}
+    <div>
+        <div>
+            <label for="id_nome">Nome</label>
+            {{form.nome}}
+        </div>
+        <div>
+            <label for="id_cnpj">CNPJ</label>
+            {{form.cnpj}}
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <label for="id_contato">Contato</label>
+            {{form.contato}}
+        </div>
+        <div>
+            <label for="id_telefone">Telefone</label>
+            {{form.telefone}}
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <label for="id_data">Data</label>
+            {{form.data}}
+        </div>
+        <div>
+            <label for="id_email">Email</label>
+            {{form.email}}
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <label for="id_descricao">Descricao</label>
+            {{form.descricao}}
+        </div>
+    </div>
     <button type="submit" class="btn btn-secondary">Salvar</button>
     <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar">
 </form>

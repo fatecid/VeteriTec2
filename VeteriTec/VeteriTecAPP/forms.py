@@ -6,7 +6,6 @@ class FornecedorForm(ModelForm):
         model = Fornecedor
         fields = ['data','nome','cnpj','contato','telefone','email','descricao']
 
-
 class FuncionarioForm(ModelForm):
     class Meta:
         model = Funcionario
