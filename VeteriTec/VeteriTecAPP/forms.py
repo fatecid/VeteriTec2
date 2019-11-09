@@ -21,5 +21,5 @@ class ClientesForm(ModelForm):
 class AnimalForm(ModelForm):
     class Meta:
         model = Animal
-        fields = ['nome','especie','raca','sexo','nascimento','castrado','cor','data','obs']
+        fields = ['idclie', 'nome','especie','raca','sexo','nascimento','castrado','cor','data','obs']
 

@@ -39,14 +39,21 @@ def clientesbuscar(request):
 
 
 def clientes_update(request, id):
+
     clie = get_object_or_404(Cliente, pk=id)
+
+    data = {
+        'idclie': clie.id
+    }
+
     form = ClientesForm(request.POST or None, instance=clie)
-    formA = AnimalForm(request.POST or None, instance=clie)
+    formA = AnimalForm(request.POST or None, initial=data)
+
 
     if form.is_valid():
         form.save()
         return redirect('clientesbuscar')
-    
+
     if formA.is_valid():
         formA.save()
         return redirect('clientesbuscar')

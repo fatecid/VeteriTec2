@@ -15,14 +15,17 @@
     <title>Calculadora de Doses</title>
 </head>
 <body>
-<div class="card-text " style="width: 35rem;">
-<form >
 
-Peso do Animal:
-  <input type="number" id="kg">
-  Kgs
+<div class="container">
+    <div class="card card-login mx-auto mt-5">
+        <div class="card-header"> Calculadora</div>
+        <div class="card-body">
+<form >
+    <div class="form-label-group"> Peso do Animal:
+  <input type="number" id="kg" > Kgs
   <p></p>
-  Dose do Fármaco:
+
+ <div class="form-group"> Dose do Fármaco:
     <input type="number" id="df">
 <select id="dfc">
     <option></option>
@@ -30,6 +33,7 @@ Peso do Animal:
     <option value="mgc">Mgc</option>
 </select>
       <p></p>
+
   Concentração do Fármaco:
     <input type="number" id="cf">
 <select id="cfc">
@@ -43,8 +47,14 @@ Peso do Animal:
   <IMPUT type="button" onclick="calcular()" class="btn btn-secondary">Calcular</IMPUT>
   <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar" onclick="apagar()"></IMPUT>
 </form>
+            <p></p>
   <div id ="res">
+</div>
+              </div>
+              </div>
 
+</div>
+</div>
 </div>
 </div>
 <script>
@@ -60,7 +70,7 @@ var kg = window.document.getElementById('kg')
  var cf1 = Number(cf.value)
  var medicacao = 0;
   if ( kg1 == 0 || df1 == 0 || cf1 == 0){
- return res.innerHTML="Numero Inválido"
+ return res.innerHTML="Número Inválido"
  }else{
     if (kg1 < 0 || df1 < 0 || cf1 < 0){
         res.innerHTML=medicacao="Impossível realizar calculos com números negativos em "
