@@ -1,4 +1,5 @@
 {% load static %}
+
 <link rel="stylesheet" href="{% static 'css/home.css'%} ">
 <!doctype html>
 <html lang="en">
@@ -25,7 +26,7 @@
 
       <div class="list-group list-group-flush">
         <a href="/agenda" class="list-group-item list-group-item-action bg-light">Agenda</a>
-        <a href="/calculadora" class="list-group-item list-group-item-action bg-light">Calculadora</a>
+<!--        <a href="/calculadora" class="list-group-item list-group-item-action bg-light">Calculadora</a>-->
         <a href="{% url 'clientes' %}" class="list-group-item list-group-item-action bg-light">Clientes</a>
         <a href="{% url 'clientesbuscar' %}" class="list-group-item list-group-item-action bg-light">BuscaClientes</a>
           <a href="{% url 'funcionarios' %}" class="list-group-item list-group-item-action bg-light">Funcionários</a>
@@ -58,12 +59,81 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
       <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom ">
+          <button type="button" class="list-group-item bg-light" data-toggle="modal" data-target="#ExemploModalCentralizado">
+  Calculadora
+</button>
+          <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalCentralizado">Calculadora de Doses</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<div class="container">
+<!--    <div class="card card-login ">-->
+<!--        <div class="card-header"> Calculadora</div>-->
+<!--        <div class="card-body">-->
+<form >
+    <div class="form-label-group">
+    <input type="number"  id="kg" style="width:435px; height:35px;" placeholder="Kgs" autofocus="autofocus">
+        <label for="kg"></label>
+
+  <p></p>
+ </div>
+   <div class="form-label-group">
+    <input type="number"  id="df" style="width:370px; height:35px;" placeholder="Dose do Fármaco" autofocus="autofocus">
+        <label for="df"></label>
+       <select id="dfc">
+    <option></option>
+    <option value="mg">Mg</option>
+    <option value="mgc">Mgc</option>
+</select>
+  <p></p>
+</div>
+    <div class="form-label-group">
+    <input type="number"  id="cf" style="width:370px; height:35px;" placeholder="Concentração do Fármaco" autofocus="autofocus">
+        <label for="kg"></label>
+<select id="cfc">
+    <option></option>
+    <option value="g">G</option>
+    <option value="mg" >Mg</option>
+    <option value="mgc">Mgc</option>
+    <option value="%">%</option>
+</select>
+  <p></p>
+ </div>
+  <P></P>
+    <div align="center">
+  <IMPUT type="button" onclick="calcular()" class="btn btn-secondary">Calcular</IMPUT>
+  <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar" onclick="apagar()"></IMPUT>
+        </div>
+</form>
+            <p></p>
+  <font size="5" color="6c757d" id ="res" >
+</font>
+
+<!-- <div class="modal-footer">-->
+<!--        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>-->
+
+<!--      </div>-->
+
+</div>
 
 
+      </div>
+
+    </div>
+  </div>
+</div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+
             <li class="nav-item active">
               <a class="nav-link" href="/">Início <span class="sr-only">(current)</span></a>
+
             </li>
                 {% if user.is_authenticated %}
             <li class="nav-item">
@@ -125,7 +195,74 @@
     });
 
 
-
+ function calcular(){
+var combodf = document.getElementById("dfc");
+var combocf = document.getElementById("cfc");
+var kg = window.document.getElementById('kg')
+ var df = window.document.getElementById('df')
+ var cf = window.document.getElementById('cf')
+ var res = window.document.getElementById('res')
+ var kg1 = Number(kg.value)
+ var df1 = Number(df.value)
+ var cf1 = Number(cf.value)
+ var medicacao = 0;
+  if ( kg1 == 0 || df1 == 0 || cf1 == 0){
+ return res.innerHTML="Número Inválido"
+ }else{
+    if (kg1 < 0 || df1 < 0 || cf1 < 0){
+        res.innerHTML=medicacao="Impossível realizar calculos com números negativos em "
+ }
+    else if (combodf.selectedIndex == 1 && combocf.selectedIndex == 1){
+    medicacao = (kg1 * df1) / (1000 / cf1);
+  //  return res.innerHTML=medicacao
+    }
+    else if(combodf.selectedIndex == 1 && combocf.selectedIndex == 2){
+        medicacao = (kg1 * df1) / cf1;
+     //   return res.innerHTML=medicacao
+    }
+    else if (combodf.selectedIndex == 1 && combocf.selectedIndex == 3)
+    {
+        medicacao = (kg1 * df1) / (cf1 * 0.001);
+      //  return res.innerHTML=medicacao
+    }
+    else if (combodf.selectedIndex == 1 && combocf.selectedIndex == 4)
+    {
+        medicacao = (kg1 * df1) / (cf1 * 10);
+       // return res.innerHTML=medicacao
+    }
+    else if (combodf.selectedIndex == 2 && combocf.selectedIndex == 1)
+    {
+        medicacao = (kg1 * (df1 * 0.001)) / (1000 / cf1);
+       // return res.innerHTML=medicacao
+    }
+    else if (combodf.selectedIndex == 2 && combocf.selectedIndex == 2)
+    {
+        medicacao = (kg1 * (df1 * 0.001)) / cf1;
+     //   return res.innerHTML=medicacao
+    }
+    else if (combodf.selectedIndex == 2 && combocf.selectedIndex == 3)
+    {
+        medicacao = (kg1 * (df1 * 0.001)) / (cf1 * 0.001);
+       // return res.innerHTML=medicacao
+    }
+    else if (combodf.selectedIndex == 2 && combocf.selectedIndex == 4)
+    {
+        medicacao = (kg1 * (df1 * 0.001)) / (cf1 * 10);
+       // return res.innerHTML=medicacao
+    }
+    if (combocf.selectedIndex == "" || combodf.selectedIndex == "")
+	{
+        return res.innerHTML="Unidades Inválidas!"
+    }
+    else{
+        return res.innerHTML=medicacao + " ML"
+    }
+ }
+}
+function apagar(){
+    var res = window.document.getElementById('res')
+    res.innerHTML=""
+}
 
   </script>
 
