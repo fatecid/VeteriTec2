@@ -21,21 +21,25 @@
         <div class="card-header"> Calculadora</div>
         <div class="card-body">
 <form >
-    <div class="form-label-group"> Peso do Animal:
-  <input type="number" id="kg" > Kgs
-  <p></p>
+    <div class="form-label-group">
+    <input type="number"  id="kg" class="form-control" placeholder="Kgs" autofocus="autofocus">
+        <label for="kg"></label>
 
- <div class="form-group"> Dose do Fármaco:
-    <input type="number" id="df">
-<select id="dfc">
+  <p></p>
+ </div>
+   <div class="form-label-group">
+    <input type="number"  id="df" placeholder="Dose do Fármaco" autofocus="autofocus">
+        <label for="df"></label>
+       <select id="dfc">
     <option></option>
     <option value="mg">Mg</option>
     <option value="mgc">Mgc</option>
 </select>
-      <p></p>
-
-  Concentração do Fármaco:
-    <input type="number" id="cf">
+  <p></p>
+</div>
+    <div class="form-label-group">
+    <input type="number"  id="cf" placeholder="Concentração do Fármaco" autofocus="autofocus">
+        <label for="kg"></label>
 <select id="cfc">
     <option></option>
     <option value="g">G</option>
@@ -43,15 +47,19 @@
     <option value="mgc">Mgc</option>
     <option value="%">%</option>
 </select>
+  <p></p>
+ </div>
   <P></P>
+    <div align="center">
   <IMPUT type="button" onclick="calcular()" class="btn btn-secondary">Calcular</IMPUT>
   <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar" onclick="apagar()"></IMPUT>
+        </div>
 </form>
             <p></p>
-  <div id ="res">
-</div>
-              </div>
-              </div>
+  <font size="5" color="6c757d" id ="res" >
+</font>
+
+
 
 </div>
 </div>
