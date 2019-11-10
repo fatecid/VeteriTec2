@@ -1,6 +1,8 @@
 {% load static %}
 
-<link rel="stylesheet" href="{% static 'css/home.css'%} ">
+<link rel="stylesheet" href="{% static 'css/home.css'%}">
+<link rel="stylesheet" href="{% static 'css/base.css'%}">
+<script src="{% static 'js/base.js'%}"></script>
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,8 +12,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
     <title>{% block title %}{% endblock %}</title>
 </head>
@@ -25,27 +27,90 @@
 
 
       <div class="list-group list-group-flush">
-        <a href="/agenda" class="list-group-item list-group-item-action bg-light">Agenda</a>
-<!--        <a href="/calculadora" class="list-group-item list-group-item-action bg-light">Calculadora</a>-->
-        <a href="{% url 'clientes' %}" class="list-group-item list-group-item-action bg-light">Clientes</a>
-        <a href="{% url 'clientesbuscar' %}" class="list-group-item list-group-item-action bg-light">BuscaClientes</a>
-          <a href="{% url 'funcionarios' %}" class="list-group-item list-group-item-action bg-light">Funcionários</a>
-          <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Botão dropdown
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Alguma ação</a>
-    <a class="dropdown-item" href="#">Outra ação</a>
-    <a class="dropdown-item" href="#">Alguma coisa aqui</a>
-  </div>
+<!--<a href="/agenda" class="list-group-item list-group-item-action bg-light">Agenda</a>
+<a href="/calculadora" class="list-group-item list-group-item-action bg-light">Calculadora</a>
+<a href="{% url 'clientes' %}" class="list-group-item list-group-item-action bg-light">Clientes</a>
+<a href="{% url 'clientesbuscar' %}" class="list-group-item list-group-item-action bg-light">BuscaClientes</a>
+<a href="{% url 'funcionarios' %}" class="list-group-item list-group-item-action bg-light">Funcionários</a>
+<div class="dropdown">
+<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Botão dropdown
+</button>
+<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+<a class="dropdown-item" href="#">Alguma ação</a>
+<a class="dropdown-item" href="#">Outra ação</a>
+<a class="dropdown-item" href="#">Alguma coisa aqui</a>
 </div>
-          <a href="{% url 'funcionariosbuscar' %}" class="list-group-item list-group-item-action bg-light">BuscaFuncionarios</a>
-        <a href="{% url 'fornecedor' %}" class="list-group-item list-group-item-action bg-light">Fornecedores</a>
-        <a href="{% url 'fornecedorbuscar' %}" class="list-group-item list-group-item-action bg-light">BuscaFornecedor</a>
-
-        <a href="/relatorio" class="list-group-item list-group-item-action bg-light" >Relatório</a>
-
+</div>
+<a href="{% url 'funcionariosbuscar' %}" class="list-group-item list-group-item-action bg-light">BuscaFuncionarios</a>
+<a href="{% url 'fornecedor' %}" class="list-group-item list-group-item-action bg-light">Fornecedores</a>
+<a href="{% url 'fornecedorbuscar' %}" class="list-group-item list-group-item-action bg-light">BuscaFornecedor</a>
+<a href="/relatorio" class="list-group-item list-group-item-action bg-light">Relatório</a>-->
+            <!-- Clientes -->
+            <li class="active" id="clientes">
+                <a href="#homeSubmenuAgenda" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-light">Agenda</a>
+                <ul class="collapse" id="homeSubmenuAgenda">
+                    <li>
+                        <a href="#" class="list-group-item list-group-item-action bg-light">Buscar</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'agenda' %}" class="list-group-item list-group-item-action bg-light">Cadastrar</a>
+                    </li>
+                </ul>
+            </li>
+            <!-- Clientes -->
+            <!-- Clientes -->
+            <li class="active" id="clientes">
+                <a href="#homeSubmenuClientes" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-light">Clientes</a>
+                <ul class="collapse" id="homeSubmenuClientes">
+                    <li>
+                        <a href="{% url 'clientesbuscar' %}" class="list-group-item list-group-item-action bg-light">Buscar</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'clientes' %}" class="list-group-item list-group-item-action bg-light">Cadastrar</a>
+                    </li>
+                </ul>
+            </li>
+            <!-- Clientes -->
+            <!-- Funcionários -->
+            <li class="active" id="clientes">
+                <a href="#homeSubmenuFuncionarios" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-light">Funcionários</a>
+                <ul class="collapse" id="homeSubmenuFuncionarios">
+                    <li>
+                        <a href="{% url 'funcionariosbuscar' %}" class="list-group-item list-group-item-action bg-light">Buscar</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'funcionarios' %}" class="list-group-item list-group-item-action bg-light">Cadastrar</a>
+                    </li>
+                </ul>
+            </li>
+            <!-- Funcionários -->
+            <!-- Fornecedores -->
+            <li class="active" id="clientes">
+                <a href="#homeSubmenuFornecedores" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-light">Fornecedores</a>
+                <ul class="collapse" id="homeSubmenuFornecedores">
+                    <li>
+                        <a href="{% url 'fornecedorbuscar' %}" class="list-group-item list-group-item-action bg-light">Buscar</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'fornecedor' %}" class="list-group-item list-group-item-action bg-light">Cadastrar</a>
+                    </li>
+                </ul>
+            </li>
+            <!-- Fornecedores -->
+            <!-- Relatório -->
+            <li class="active" id="clientes">
+                <a href="#homeSubmenuRelatorio" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-light">Relatórios</a>
+                <ul class="collapse" id="homeSubmenuRelatorio">
+                    <li>
+                        <a href="#" class="list-group-item list-group-item-action bg-light">Buscar</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'relatorio' %}" class="list-group-item list-group-item-action bg-light">Cadastrar</a>
+                    </li>
+                </ul>
+            </li>
+            <!-- Relatório -->
           <div class="container">
               <br>
     <img src= "{% static "img\passarinhos.png" %}" width="220" height="225"  />
