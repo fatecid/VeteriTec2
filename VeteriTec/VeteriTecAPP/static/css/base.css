@@ -1,0 +1,48 @@
+#sidebar-wrapper > div > li {
+  list-style: none;
+}
+
+/* .collapse {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+} */
+
+#homeSubmenuAgenda {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#homeSubmenuClientes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#homeSubmenuFuncionarios {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#homeSubmenuFornecedores {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#homeSubmenuRelatorio {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    list-style: none;
+}
