@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% crispy form form.helper %}
+
+{% block title %}
+Fornecedor
+{% endblock %}
+
+{% block pagina %}
+Fornecedores
+{% endblock %}
+
+{% block main %}
+<div class="form-control" style="width:435px; height:35px;">
+<form method="POST">
+    {% csrf_token %}
+    {% crispy form %}
+    <button type="submit" class="btn btn-secondary">Salvar</button>
+    <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar">
+</form>
+</div>
+{% endblock %}

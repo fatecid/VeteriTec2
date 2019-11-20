@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Deletar Fornecedor
+{% endblock %}
+
+{% block pagina %}
+Deletar Fornacedor
+{% endblock %}
+
+{% block main %} <h>Tem certeza que deseja deletar {{ forc.nome }}  ? </h>
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-secondary">Deletar</button>
+    <a href="/fornecedorbuscar" class="btn btn-secondary">Cancelar</a>
+</form>{% endblock %}
