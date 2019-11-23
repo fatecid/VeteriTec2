@@ -1,5 +1,6 @@
 {% load static %}
-{% load bootstrap %} 
+{% load bootstrap %}
+
 <link rel="stylesheet" href="{% static 'css\style.css'%} ">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -33,7 +34,8 @@
 			</div>
 			<div class="card-body">
             <form method="post" class="fadeIn second">
-				<div>
+				<div >
+
 						{% csrf_token %}
 						{{ form.as_p}}
 				</div>

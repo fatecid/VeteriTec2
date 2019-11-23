@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
 {% block title %}
 Clientes
 {% endblock %}
@@ -8,9 +12,31 @@ Clientes
 Cadastro de Clientes
 {% endblock %}
 {% block main %}
+        fields = ['data','nome','cpf','sexo','nascimento','cep','rua','numero','bairro','cidade','uf','complemento','telefone','celular','email']
+
 <form method="POST">
+    <div style= "font-family: 'Comic Sans MS', cursive, sans-serif; font-size: 20px;">
        {% csrf_token %}
-       {{ form }}
+      Data: <input class='{{ form.data }}'>
+   <br>
+        <br>Nome do Cliente: {{ form.nome }}
+   <br>
+
+        <br>CPF: {{ form.cpf }}
+       <br>
+
+            <br>Sexo <select class='{{ form.sexo}}' ><option>Masculino</option><option>Feminino</option> </select>
+<br>
+        <br>
+            Data de Nascimento:  {{ form.nascimento }}
+<input type="text"
+    data-role="calendarpicker" id="dp2"
+    data-on-change="$('#dp1').attr('value', (arguments[0]))">
+
+<input type="text"
+    data-role="calendarpicker" id="dp1" data-format="%d %b %Y">
+
+    </div>
 <!--<iframe allowTransparency="true" style="min-height:700px; height:inherit; overflow:auto;" width="500%" id="contactform123" name="contactform123" marginwidth="0" marginheight="0" frameborder="0" src="//www.123formbuilder.com/my-contact-form-5035544.html"><p>Your browser does not support iframes. The contact form cannot be displayed. Please use another contact method (phone, fax etc)</p></iframe>-->
     <button type="submit" class="btn btn-secondary">Salvar</button>
     <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar">
@@ -24,6 +50,10 @@ Cadastro de Clientes
     <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar">
 </form>
 
-
+<script>
+var cal = $(element).data("calendarpicker");
+console.log(cal.val());
+cal.val("1972/12/21");
+</script>
 
 {% endblock %}
