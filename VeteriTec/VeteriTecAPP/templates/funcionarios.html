@@ -13,8 +13,12 @@ Funcionários
 {% block main %}
 <form method="POST">
     {% csrf_token %}
+<<<<<<< HEAD
     <div class="col" style="width: 100%;" >Cliente: {{form.nome}} </div>
     <div class="col" style="width: 100%;" >cpf: {{form.cpf}} </div>
+=======
+    {% crispy form %}
+>>>>>>> 0a8cb42a6c57ce6ea31a89c93f4575ab7422c1a0
     <button type="submit" class="btn btn-secondary">Salvar</button>
     <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar">
 </form>
