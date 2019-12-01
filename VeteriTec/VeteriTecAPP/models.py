@@ -197,8 +197,8 @@ class Fornecedor(models.Model):
     cnpj = models.CharField(max_length=20, blank=True, null=True)
     contato = models.CharField(max_length=30, blank=True, null=True)
     telefone = models.CharField(max_length=25, blank=True, null=True)
-    email = models.CharField(max_length=100, blank=True, null=True)
-    descricao = models.CharField(max_length=100, blank=True, null=True)
+    email = models.EmailField(max_length=100, blank=True, null=True)
+    descricao = models.TextField(max_length=200, blank=True, null=True)
 
     class Meta:
         managed = False

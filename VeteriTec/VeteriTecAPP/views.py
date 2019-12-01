@@ -34,7 +34,11 @@ def clientes(request):
 
 
 def clientesbuscar(request):
-    clie = Cliente.objects.all()
+    if (request.method == "POST"):
+        cliente = request.POST["cliente"]
+        clie = Cliente.objects.filter(nome__icontains=cliente)
+    else:
+        clie = Cliente.objects.all()
     return render(request, 'clientesbuscar.html', {'clie': clie})
 
 
@@ -80,7 +84,12 @@ def fornecedor(request):
 
 
 def fornecedorbuscar(request):
-    forc = Fornecedor.objects.all()
+    if (request.method == "POST"):
+        fornecedor = request.POST["fornecedor"]
+        forc = Fornecedor.objects.filter(nome__icontains=fornecedor)
+    else:
+        forc = Fornecedor.objects.all()
+
     return render(request, 'fornecedorbuscar.html', {'forc': forc})
 
 
@@ -107,13 +116,19 @@ def fornecedor_delete(request, id):
 def funcionarios(request):
     form = FuncionarioForm(request.POST or None)
     if form.is_valid():
+
         form.save()
         return redirect('home')
     return render(request, 'funcionarios.html', {'form': form})
 
 
 def funcionariosbuscar(request):
-    func = Funcionario.objects.all()
+    if (request.method == "POST"):
+        funcionario = request.POST["funcionario"]
+        func = Funcionario.objects.filter(nome__icontains=funcionario)
+    else:
+        func = Funcionario.objects.all()
+
     return render(request, 'funcionariosbuscar.html', {'func': func})
 
 

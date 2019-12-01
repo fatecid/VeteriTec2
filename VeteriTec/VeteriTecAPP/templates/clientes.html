@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 
+
+
+
 {% block title %}
 Clientes
 {% endblock %}
@@ -8,22 +11,67 @@ Clientes
 Cadastro de Clientes
 {% endblock %}
 {% block main %}
-<form method="POST">
-       {% csrf_token %}
-       {{ form }}
-<!--<iframe allowTransparency="true" style="min-height:700px; height:inherit; overflow:auto;" width="500%" id="contactform123" name="contactform123" marginwidth="0" marginheight="0" frameborder="0" src="//www.123formbuilder.com/my-contact-form-5035544.html"><p>Your browser does not support iframes. The contact form cannot be displayed. Please use another contact method (phone, fax etc)</p></iframe>-->
-    <button type="submit" class="btn btn-secondary">Salvar</button>
-    <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar">
-</form>
-   <P> Cadastrar Animal </P>
-    <B></B>
-<form method="POST">
-    {% csrf_token %}
-       {{ formA }}
-     <button type="submit" class="btn btn-secondary">Salvar</button>
-    <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar">
-</form>
 
+<form method="POST">
+<div class="row">
+    <div class="container d-lg-block" style= "font-family: 'Comic Sans MS', cursive, sans-serif; font-size: 20px;">
+    <div class="row">
+
+       {% csrf_token %}
+      <div class="col-sm">Data: <br>    {{ form.data }}</div>
+      <div class="col-sm">Cliente: <br>{{ form.nome }}</div>
+      <div class="col-sm">CPF: <br>{{ form.cpf }}</div>
+           <div class="w-100"></div>
+          <br>
+        <div class="col-sm">Sexo: <br> {{ form.sexo}}</div>
+        <div class="col-sm">Data de Nascimento : <br>{{ form.nascimento }}</div>
+        <div class="col-sm">CEP: <br>{{ form.cep }}</div>
+             <div class="w-100"></div>
+        <br><br>
+        <div>
+        <div class="col-sm">Rua: <br> {{ form.rua }}</div>
+        <div class="col-sm">Nº: <br>{{ form.numero }}</div>
+        <div class="col-sm"> Bairro: <br> {{ form.bairro }}</div>
+            <div class="col">Cidade: <br> {{ form.cidade }}</div>
+
+            <div class="col-sm">UF:<br> {{ form.uf }} <br> Comp.:<br> {{ form.complemento }}</div>
+          <div class="w-100"></div>
+        <br><br>
+            </div>
+
+        <div class="col">
+
+             <div class="col-12 col-md-8">Telefone: <br> {{ form.telefone }}</div>
+            <br>
+             <div class="col-8">Celular: <br> {{ form.celular}}</div>
+            <br>
+             <div class="col-8">E-Mail: <br> {{ form.email }}</div>
+            <br>
+
+                <div  class="container" >
+           <p></p> <button type="submit" class="btn btn-secondary" >Salvar</button>
+    <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar">
+            </div>
+ </form>
+
+<!--<div class="col">-->
+
+<!-- <p>Cadastrar Animal </p>-->
+<!--    <B></B>-->
+<!--<form method="POST">-->
+<!--    {% csrf_token %}-->
+<!--       {{ formA }}-->
+<!--     <button type="submit" class="btn btn-secondary">Salvar</button>-->
+<!--    <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar">-->
+<!--</form>-->
+<!--    </div>-->
+</div>
+        </div>
+
+</div>
+    </div>
+
+</div>
 
 
 {% endblock %}

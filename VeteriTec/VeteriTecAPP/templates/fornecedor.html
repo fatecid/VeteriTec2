@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+
 {% block title %}
 Fornecedor
 {% endblock %}
@@ -9,12 +10,38 @@ Fornecedores
 {% endblock %}
 
 {% block main %}
-<div class="form-control" style="width:435px; height:35px;">
+
 <form method="POST">
-    {% csrf_token %}
-    {{ form }}
+  <div class="row">
+    <div class="container d-lg-block" style= "font-family: 'Comic Sans MS', cursive, sans-serif; font-size: 20px;">
+    <div class="row">
+
+       {% csrf_token %}
+      <div class="col-sm">Data: <br>    {{ form.data }}</div>
+      <div class="col-sm">Fornecedor: <br>{{ form.nome }}</div>
+      <div class="col-sm">CNPJ: <br>{{ form.cnpj }}</div>
+           <div class="w-100"></div>
+          <br>
+        <div class="col-sm">Contato: <br> {{ form.contato}}</div>
+        <div class="col-sm">Telefone : <br>{{ form.telefone }}</div>
+        <div class="col-sm">E-Mail: <br>{{ form.email }}</div>
+             <div class="w-100"></div>
+        <br><br>
+        <div>
+        <div class="col-sm">Descição: <br> {{ form.descricao }}</div>
+<br><br>
+    <div class="container">
     <button type="submit" class="btn btn-secondary">Salvar</button>
     <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar">
+    </div>
 </form>
 </div>
+</div>
+        </div>
+
+</div>
+    </div>
+
+
+
 {% endblock %}

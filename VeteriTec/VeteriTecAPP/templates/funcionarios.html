@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% crispy form form.helper %}
 
 {% block title %}
 Funcionários
@@ -11,7 +13,8 @@ Funcionários
 {% block main %}
 <form method="POST">
     {% csrf_token %}
-    {{ form }}
+    <div class="col" style="width: 100%;" >Cliente: {{form.nome}} </div>
+    <div class="col" style="width: 100%;" >cpf: {{form.cpf}} </div>
     <button type="submit" class="btn btn-secondary">Salvar</button>
     <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar">
 </form>
