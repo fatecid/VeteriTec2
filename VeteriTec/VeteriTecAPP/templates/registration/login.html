@@ -33,11 +33,26 @@
 				</div>
 			</div>
 			<div class="card-body">
-            <form method="post" class="fadeIn second">
-				<div >
-
-						{% csrf_token %}
-						{{ form.as_p}}
+					<div class="d-flex justify-content-center form_container">
+						<form method="post" action="{% url 'login' %}">
+							{% csrf_token %}
+							<div class="input-group mb-3">
+								<div class="input-group-append">
+									<span class="input-group-text"><i class="fas fa-user"></i></span>
+								</div>
+								{{ form.username }}
+							</div>
+							<div class="input-group mb-2">
+								<div class="input-group-append">
+									<span class="input-group-text"><i class="fas fa-key"></i></span>
+								</div>
+								{{ form.password }}
+							</div>
+						 <div class="d-flex justify-content-center mt-3 login_container">
+									 <button type="submit" name="button" class="btn login_btn" value="{{ next }}">Login</button>
+									 <input type="hidden" name="next" value="{{ next }}">
+						 </div>
+						</form>
 				</div>
 					<div class="row align-items-center remember">
 						<input type="checkbox">Remember Me
