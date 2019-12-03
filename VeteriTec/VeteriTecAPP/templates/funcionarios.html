@@ -1,34 +1,20 @@
-{% extends 'base.html' %}
-{% load crispy_forms_tags %}
-{% crispy form form.helper %}
-
-{% block title %}
-Funcionários
-{% endblock %}
-
-{% block pagina %}
-Funcionários
-{% endblock %}
-
-{% block main %}
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% crispy form
+form.helper %} {% block title %} Funcionários {% endblock %} {% block pagina %}
+Funcionários {% endblock %} {% block main %}
 <form method="POST">
-    {% csrf_token %}
-<<<<<<< HEAD
+  {% csrf_token %}
 
-    <div class="col" style="width: 100%;" >Cliente: {{form.nome}} </div>
-    <div class="col" style="width: 100%;" >cpf: {{form.cpf}} </div>
+  <div class="col" style="width: 100%;">Cliente: {{form.nome}}</div>
+  <div class="col" style="width: 100%;">cpf: {{form.cpf}}</div>
 
-    {% crispy form %}
+  {% crispy form %}
 
-=======
-<!-- <<<<<<< HEAD -->
-    <div class="col" style="width: 100%;" >Cliente: {{form.nome}} </div>
-    <div class="col" style="width: 100%;" >cpf: {{form.cpf}} </div>
-<!-- ======= -->
-    {% crispy form %}
-<!-- >>>>>>> 0a8cb42a6c57ce6ea31a89c93f4575ab7422c1a0 -->
->>>>>>> b4211d5409ff0cfcdd0711dfa6eefb73fd1389df
-    <button type="submit" class="btn btn-secondary">Salvar</button>
-    <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar">
+  <button type="submit" class="btn btn-secondary">Salvar</button>
+  <input
+    type="reset"
+    class="btn btn-outline-secondary"
+    name="b2"
+    value="Limpar"
+  />
 </form>
 {% endblock %}
