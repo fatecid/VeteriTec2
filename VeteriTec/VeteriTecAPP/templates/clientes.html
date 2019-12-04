@@ -4,6 +4,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+
 {% block title %}
 Clientes
 {% endblock %}
@@ -13,6 +17,28 @@ Cadastro de Clientes
 {% endblock %}
 
 {% block main %}
+
+
+
+<div class="col">
+
+ <p>Cadastrar Animal </p>
+    <B></B>
+<form method="POST">
+    {% csrf_token %}
+       {{ formA }}
+     <button type="submit" class="btn btn-secondary">Salvar</button>
+    <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar">
+</form>
+    </div>
+<div>
+        </div>
+
+</div>
+    </div>
+
+
+
 
 <form method="POST">
 <div class="row">
@@ -77,11 +103,5 @@ Cadastro de Clientes
     <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar">
             </div>
  </form>
-
-<script>
-var cal = $(element).data("calendarpicker");
-console.log(cal.val());
-cal.val("1972/12/21");
-</script>
 
 {% endblock %}
