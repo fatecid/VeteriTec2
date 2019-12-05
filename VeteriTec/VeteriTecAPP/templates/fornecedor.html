@@ -30,16 +30,15 @@ Fornecedores
         <div class="col-sm">Descrição: <br> {{ form.descricao }}</div>
 <br><br>
         </div>
-    <div class="container">
-<div class="form-control" style="width:435px; height:35px;">
-<form method="POST">   {{  form }}
+    </div>
+</div>
+    <br>
+<div class="container">
+<form method="POST">
     {% csrf_token %}
-
     <button type="submit" class="btn btn-secondary">Salvar</button>
     <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar">
-
-    </div>
-
+</div>
 </form>
 
 
