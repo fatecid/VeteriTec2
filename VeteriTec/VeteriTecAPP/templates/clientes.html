@@ -1,13 +1,5 @@
 {% extends 'base.html' %}
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-
-
 {% block title %}
 Clientes
 {% endblock %}
@@ -15,30 +7,7 @@ Clientes
 {% block pagina %}
 Cadastro de Clientes
 {% endblock %}
-
 {% block main %}
-
-
-
-<div class="col">
-
- <p>Cadastrar Animal </p>
-    <B></B>
-<form method="POST">
-    {% csrf_token %}
-       {{ formA }}
-     <button type="submit" class="btn btn-secondary">Salvar</button>
-    <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar">
-</form>
-    </div>
-<div>
-        </div>
-
-</div>
-    </div>
-
-
-
 
 <form method="POST">
 <div class="row">
@@ -55,53 +24,41 @@ Cadastro de Clientes
         <div class="col-sm">Data de Nascimento : <br>{{ form.nascimento }}</div>
         <div class="col-sm">CEP: <br>{{ form.cep }}</div>
              <div class="w-100"></div>
-        <br><br>
+          <br>
         <div>
         <div class="col-sm">Rua: <br> {{ form.rua }}</div>
         <div class="col-sm">Nº: <br>{{ form.numero }}</div>
         <div class="col-sm"> Bairro: <br> {{ form.bairro }}</div>
             <div class="col">Cidade: <br> {{ form.cidade }}</div>
-
             <div class="col-sm">UF:<br> {{ form.uf }} <br> Comp.:<br> {{ form.complemento }}</div>
           <div class="w-100"></div>
         <br><br>
             </div>
-
         <div class="col">
-
-             <div class="col-12 col-md-8">Telefone: <br> {{ form.telefone }}</div>
+             <div class="col-sm">Telefone: <br> {{ form.telefone }}</div>
             <br>
-             <div class="col-8">Celular: <br> {{ form.celular}}</div>
+             <div class="col">Celular: <br> {{ form.celular}}</div>
             <br>
-             <div class="col-8">E-Mail: <br> {{ form.email }}</div>
+             <div class="col">E-Mail: <br> {{ form.email }}</div>
             <br>
+            <br>
+             <div class="container"> <button type="submit" class="btn btn-secondary" >Salvar</button>
+        <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar"></div>
+</div>
+<!--</form>-->
+<!--   <P> Cadastrar Animal </P>-->
+<!--    <B></B>-->
+<!--<form method="POST">-->
+<!--    {% csrf_token %}-->
+<!--       {{ formA }}-->
+<!--     <button type="submit" class="btn btn-secondary">Salvar</button>-->
+<!--    <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar">-->
+<!--            </div>-->
+<!-- </form>-->
 
-                <div  class="container" >
-           <p></p> <button type="submit" class="btn btn-secondary" >Salvar</button>
-  <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar">
-<form method="POST">
-    <div style= "font-family: 'Comic Sans MS', cursive, sans-serif; font-size: 20px;">
-       {% csrf_token %}
-      Data: <input class='{{ form.data }}'>
-   <br>
-        <br>Nome do Cliente: {{ form.nome }}
-   <br>
 
-        <br>CPF: {{ form.cpf }}
-       <br>
-
-
-    </div>
-
-</form>
-   <P> Cadastrar Animal </P>
-    <B></B>
-<form method="POST">
-    {% csrf_token %}
-       {{ formA }}
-     <button type="submit" class="btn btn-secondary">Salvar</button>
-    <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar">
             </div>
- </form>
-
+    </div>
+</div>
+    </form>
 {% endblock %}
