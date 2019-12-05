@@ -18,8 +18,15 @@ def login(request):
 
 
 def agenda(request):
-    return render(request, 'agenda.html')
+    form = AgendaForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('home')
+    return render(request, 'agenda.html', {'form': form})
 
+
+def cadastrar_agenda(request):
+    return render(request, 'cadastrar_agenda.html')
 
 def calculadora(request):
     return render(request, 'calculadora.html')

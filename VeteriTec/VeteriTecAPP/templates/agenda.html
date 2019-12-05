@@ -9,5 +9,32 @@ Agenda
 {% endblock %}
 
 {% block main %}
-aqui vai ter o cadastro dos agendamentos
+<form method="POST">
+<div>
+    <div class="container d-lg-block" style= "font-family: 'Comic Sans MS', cursive, sans-serif; font-size: 20px;">
+    <div class="row">
+
+       {% csrf_token %}
+      <div class="col-sm">Cliente: <br>    {{ form.cliente }}</div>
+      <div class="col-sm">IdAnimal: <br>{{ form.idanimal }}</div>
+      <div class="col-sm">Tipo: <br>{{ form.tipo }}</div>
+           <div class="w-100"></div>
+          <br>
+        <div class="col-sm">Data: <br> {{ form.data }}</div>
+        <div class="col-sm">Início : <br>{{ form.hora }}</div>
+        <div class="col-sm">Término: <br>{{ form.termino }}</div>
+             <div class="w-100"></div>
+        <br><br>
+        <div class="col-sm">Obs: <br> {{ form.obs }}</div>
+        <div class="col-sm">Descrição: <br> {{ form.descricao }}</div>
+    </div>
+        </div>
+
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-secondary">Salvar</button>
+    <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar">
+</div>
+</form>
+
 {% endblock %}

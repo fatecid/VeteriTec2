@@ -18,6 +18,7 @@ urlpatterns = [
     path('home', views.home, name='home'),
      path('login/', auth_views.LoginView.as_view(), name='login'),
     path('agenda', views.agenda, name='agenda'),
+    path('cadastrar_consultas', views.cadastrar_agenda, name='cadastrar_consultas'),
 
     path('calculadora', views.calculadora, name='calculadora'),
 

@@ -18,8 +18,8 @@ class Agenda(models.Model):
     hora = models.TimeField(blank=True, null=True)
     termino = models.TimeField(blank=True, null=True)
     comparecimento = models.IntegerField()
-    obs = models.CharField(max_length=1000, blank=True, null=True)
-    descricao = models.CharField(max_length=1000, blank=True, null=True)
+    obs = models.TextField(max_length=1000, blank=True, null=True)
+    descricao = models.TextField(max_length=1000, blank=True, null=True)
 
     class Meta:
         managed = False
@@ -211,7 +211,7 @@ class Fornecedor(models.Model):
 
 
 class Funcionario(models.Model):
-    nome = models.CharField(max_length=30)
+    nome = models.CharField(max_length=30, null=True)
     cpf = models.CharField(unique=True, max_length=18, blank=True, null=True)
     funcao = models.CharField(max_length=30, blank=True, null=True)
     crmv = models.CharField(max_length=30, blank=True, null=True)

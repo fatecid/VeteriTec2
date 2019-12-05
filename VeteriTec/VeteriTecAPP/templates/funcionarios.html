@@ -4,17 +4,15 @@ Funcionários {% endblock %} {% block main %}
 <form method="POST">
   {% csrf_token %}
 
-  <div class="col" style="width: 100%;">Cliente: {{form.nome}}</div>
-  <div class="col" style="width: 100%;">cpf: {{form.cpf}}</div>
-
-  {% crispy form %}
-
-  <button type="submit" class="btn btn-secondary">Salvar</button>
-  <input
-    type="reset"
-    class="btn btn-outline-secondary"
-    name="b2"
-    value="Limpar"
-  />
+<div class="row" style= "font-family: 'Comic Sans MS', cursive, sans-serif; font-size: 20px;" >
+  <br>
+    {% crispy form %}
+</div>
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-secondary">Salvar</button>
+    <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar">
+</div>
+</form>
 </form>
 {% endblock %}

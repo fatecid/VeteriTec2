@@ -27,3 +27,7 @@ class AnimalForm(ModelForm):
         model = Animal
         fields = ['idclie', 'nome','especie','raca','sexo','nascimento','castrado','cor','data','obs']
 
+class AgendaForm(ModelForm):
+    class Meta:
+        model = Agenda
+        fields = ['idvet', 'cliente', 'idanimal', 'tipo','data', 'hora', 'termino', 'comparecimento', 'obs', 'descricao']

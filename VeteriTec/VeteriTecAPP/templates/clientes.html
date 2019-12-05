@@ -44,17 +44,39 @@ Cadastro de Clientes
             <br>
              <div class="container"> <button type="submit" class="btn btn-secondary" >Salvar</button>
         <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar"></div>
+ </div>
+
+</form>
+        <div class="col">
+
+             <P> Cadastrar Animal </P>
+<form method="POST">
+    {% csrf_token %}
+    <div class="col">Nome: <br> {{ formA.nome }}</div>
+    <div class="col">Espécie: <br> {{ formA.especie }}</div>
+    <div class="col">Raça: <br> {{ formA.raca }}</div>
+          <div class="w-100"></div>
+     <div class="col">Sexo: <br> {{ formA.sexo }}</div>
+     <div class="col">Nasc: <br> {{ formA.nascimento }}</div>
+     <div class="col">Castrado: <br> {{ formA.castrado }}</div>
+   <div class="w-100"></div>
+
+<div class="col">
+    <div>
+    <div class="col-sm">Cor: <br> {{ formA.cor }}</div>
+     <div class="col">Data: <br> {{ formA.data }}</div>
+     <div class="col">Obs: <br> {{ formA.obs }}</div>
+
+     <button type="submit" class="btn btn-secondary">Salvar</button>
+    <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar">
+    </div>
+    </div>
 </div>
-<!--</form>-->
-<!--   <P> Cadastrar Animal </P>-->
-<!--    <B></B>-->
-<!--<form method="POST">-->
-<!--    {% csrf_token %}-->
-<!--       {{ formA }}-->
-<!--     <button type="submit" class="btn btn-secondary">Salvar</button>-->
-<!--    <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar">-->
-<!--            </div>-->
-<!-- </form>-->
+<div>
+   </div>
+            </div>
+
+ </form>
 
 
             </div>
