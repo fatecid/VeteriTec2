@@ -11,33 +11,29 @@ Fornecedores
 
 {% block main %}
 
-<form method="POST">
-<div>
-    <div class="container d-lg-block" style= "font-family: 'Comic Sans MS', cursive, sans-serif; font-size: 20px;">
-    <div class="row">
-
-       {% csrf_token %}
-      <div class="col-sm">Data: <br>    {{ form.data }}</div>
-      <div class="col-sm">Fornecedor: <br>{{ form.nome }}</div>
-      <div class="col-sm">CNPJ: <br>{{ form.cnpj }}</div>
-           <div class="w-100"></div>
-          <br>
-        <div class="col-sm">Contato: <br> {{ form.contato}}</div>
-        <div class="col-sm">Telefone : <br>{{ form.telefone }}</div>
-        <div class="col-sm">E-Mail: <br>{{ form.email }}</div>
-             <div class="w-100"></div>
-        <br><br>
-        <div class="col-sm">Descrição: <br> {{ form.descricao }}</div>
-<br><br>
-        </div>
-    </div>
-</div>
-    <br>
-<div class="container">
-<form method="POST">
-    {% csrf_token %}
-    <button type="submit" class="btn btn-secondary">Salvar</button>
-    <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar">
+<div class="row">
+        <div class="col-lg-6" style="font-family: 'Comic Sans MS', cursive, sans-serif; font-size: 16px;">
+            <form method="POST">
+                  <!-- <div class="container d-lg-block" style="font-family: 'Comic Sans MS', cursive, sans-serif; font-size: 20px;"> -->
+                    {% csrf_token %}
+                <div class="row">
+                  <div class="col-sm">Data: <br> {{ form.data }}</div>
+                  <div class="col-sm">Nome: <br>{{ form.nome }}</div>
+                  <div class="col-sm">CNPJ: <br>{{ form.cnpj }}</div>
+                </div>
+                <div class="row">
+                  <div class="col-sm">Contato: <br> {{ form.contato}}</div>
+                  <div class="col-sm">Telefone : <br>{{ form.telefone }}</div>
+                  <div class="col-sm">E-Mail: <br>{{ form.email }}</div>
+                </div>
+                <div class="row">
+                  <div class="col-sm">Descrição: <br> {{ form.descricao }}</div>
+                </div>
+                <br>
+                <div class="row">
+                <div class="col-lg">
+                    <button type="submit" class="btn btn-secondary">Salvar</button>
+                    <input type="reset" class="btn btn-outline-secondary" name="b2" value="Limpar"></div>   
 </div>
 </form>
 

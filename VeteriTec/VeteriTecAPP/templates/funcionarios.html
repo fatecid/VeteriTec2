@@ -1,17 +1,56 @@
 {% extends 'base.html' %} {% load crispy_forms_tags %} {% crispy form
 form.helper %} {% block title %} Funcionários {% endblock %} {% block pagina %}
-Funcionários {% endblock %} {% block main %}
+Cadastro de Funcionários {% endblock %} {% block main %}
 <form method="POST">
   {% csrf_token %}
 
 <div class="row" style= "font-family: 'Comic Sans MS', cursive, sans-serif; font-size: 20px;" >
   <br>
-    {% crispy form %}
+
 </div>
-<form method="POST">
+<div style= "font-family: 'Comic Sans MS', cursive, sans-serif; font-size: 20px;">
+<form method="POST" >
     {% csrf_token %}
-    <button type="submit" class="btn btn-secondary">Salvar</button>
-    <INPUT type="reset" class="btn btn-outline-secondary"  name="b2" value="Limpar">
+    <div class="row" >
+        <div class="col-sm">Nome: <br> {{ form.nome }}</div>
+        <div class="col-sm">CPF: <br>{{ form.cpf }}</div>
+        <div class="col-sm">Função: <br>{{ form.funcao }}</div>
+      </div>
+      <div class="row">
+          <div class="col-sm">CRMV: <br> {{ form.crmv}}</div>
+          <div class="col-sm">Validade : <br>{{ form.validade }}</div>
+          <div class="col-sm">Sexo: <br>{{ form.sexo }}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm">Nascimento: <br> {{ form.nascimento }}</div>
+            <div class="col-sm">CEP: <br>{{ form.cep }}</div>
+            <div class="col-sm"> Rua: <br> {{ form.rua }}</div>
+          </div>
+          <div class="row">
+              <div class="col-sm">Nº: <br> {{ form.numero }}</div>
+              <div class="col-sm">Bairro: <br>{{ form.bairro }}</div>
+              <div class="col-sm"> Cidade: <br> {{ form.cidade }}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm">UF: <br> {{ form.uf }}</div>
+                <div class="col-sm">Complemento:<br> {{ form.complemento }}</div>
+                <div class="col-sm">E-Mail: <br> {{ form.email }}</div>
+              </div>
+              
+                  Telefone: <br> {{ form.telefone }}
+                  <br>
+                  Celular: <br> {{ form.celular}}
+                  <br>
+               
+                  <br>
+            <div class="row">
+            <div class="col-lg">
+                <button type="submit" class="btn btn-secondary">Salvar</button>
+                <input type="reset" class="btn btn-outline-secondary" name="b2" value="Limpar"></div>
+            </div>
+                <!-- </div> -->
+          </form>
+</div>
 </div>
 </form>
 </form>
